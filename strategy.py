@@ -19,6 +19,7 @@ class Strategy:
             data = df.xs(ticker, level="Ticker", axis=1)
             for name, indicator in self.indicators.items():
                 df[(name, ticker)] = indicator(data)
+                data = df.xs(ticker, level="Ticker", axis=1)
             data = df.xs(ticker, level="Ticker", axis=1)
             df[("Signal", ticker)] = data.apply(lambda x: self.signal_logic(x), axis=1)
             df[("Position", ticker)] = df[("Signal", ticker)].replace(to_replace=0, method='ffill')

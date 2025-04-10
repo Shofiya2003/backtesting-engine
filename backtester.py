@@ -49,8 +49,9 @@ class Backtester:
             }
             self.portfolio_history[ticker] = []
             asset_data = data.xs(ticker, level="Ticker", axis=1)
+            asset_data["Position"] = asset_data["Signal"].shift(1).fillna(0)
             for date, row in asset_data.iterrows():
-                self.trade_executor(ticker, row['Signal'], row['Close'])
+                self.trade_executor(ticker, row['Position'], row['Close'])
                 self.update_portfolio(ticker, row['Close'])
                 if len(self.daily_portfolio_value) < len(asset_data):
                     self.daily_portfolio_value.append(self.assets_data[ticker]["total_value"])
