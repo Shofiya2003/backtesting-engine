@@ -1,4 +1,6 @@
 import numpy as np
+import pandas as pd
+from matplotlib import pyplot as plt
 from pandas import Series
 
 
@@ -14,3 +16,12 @@ def calculate_annualized_volatility(daily_returns: Series):
 def calculate_sharpe_ratio(annualized_returns: float, annualized_volatility: float):
     return annualized_returns/annualized_volatility
 
+def compare_with_buy_hold(buy_hold_daily_returns: pd.Series, strategy_returns: pd.Series):
+    # buy_hold_daily_returns = buy_hold_daily_returns.sort_index()
+    # strategy_returns = strategy_returns.sort_index()
+    print(strategy_returns)
+    (1 + buy_hold_daily_returns).cumprod().plot(label="Strategy", color='blue')
+    (1 + strategy_returns).cumprod().plot(label="Buy & Hold", color='red')
+    plt.tight_layout()
+    plt.legend()
+    plt.show()

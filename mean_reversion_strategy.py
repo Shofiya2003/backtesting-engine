@@ -6,4 +6,4 @@ indicators = {
 
 signal_logic = lambda row: 1 if row["sma_20"] > row["Close"] else -1
 
-mean_reversion_strategy = Strategy("AAPL", indicators, signal_logic)
+mean_reversion_strategy = Strategy([], indicators, signal_logic)
