@@ -88,6 +88,7 @@ class Backtester:
 
         print(self.buy_and_hold(data).iloc[-1])
         buy_hold_returns = self.buy_and_hold(data).pct_change().dropna()
+
         daily_returns.index = buy_hold_returns.index
         portfolio_values.index = data.index
 
