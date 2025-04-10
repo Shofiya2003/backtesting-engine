@@ -62,3 +62,9 @@ backtester.calculate_performance(data)
 
 ![image](https://github.com/user-attachments/assets/277e8880-b8b9-4694-831e-b518c68a084c)
 
+
+## 🤝 Contributing
+
+Have a new strategy idea or feature suggestion? Contributions are welcome!
+Please fork the repo, make your changes, and submit a pull request 🚀
+
