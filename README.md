@@ -62,6 +62,10 @@ backtester.calculate_performance(data)
 
 ![image](https://github.com/user-attachments/assets/277e8880-b8b9-4694-831e-b518c68a084c)
 
+## Jupyter Notebook for Trading Strategies
+
+**Mean Reversion** https://github.com/Shofiya2003/quant-strategies/tree/master/mean-reversion
+
 
 ## 🤝 Contributing
 
